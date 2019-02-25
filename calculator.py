@@ -1,6 +1,6 @@
-def polish(operation, number1, number2):
+def polish(operation = str(input()), number1 = int(input()), number2 = int(input())):
     try:
-        assert operation == "+" or "-" or "/" or "*"
+        assert operation in ("+", "-", "/", "*")
     except AssertionError:
         print("Эту операцию нельзя выполнить,извините")
     else:
@@ -19,4 +19,4 @@ def polish(operation, number1, number2):
             print("Вы делите строки или ввели не то количество аргументов")
         else:
             return result
-print(polish("/", 1, 5))
+print(polish())
