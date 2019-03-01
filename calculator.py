@@ -1,17 +1,19 @@
-def polish(operation = str(input()), number1 = int(input()), number2 = int(input())):
+def polish(operation = str(input())):
+    number1 = int(operation[1])
+    number2 = int(operation[2])
     try:
-        assert operation in ("+", "-", "/", "*")
+        assert operation[0] in ("+", "-", "/", "*")
     except AssertionError:
         print("Эту операцию нельзя выполнить,извините")
     else:
         try:
-            if operation == "/":
+            if operation[0] == "/":
                 result = number1/number2
-            elif operation == "*":
+            elif operation[0] == "*":
                 result = number1*number2
-            elif operation == "-":
+            elif operation[0] == "-":
                 result = number1-number2
-            elif operation == "+":
+            elif operation[0] == "+":
                 result = number1+number2
         except ZeroDivisionError:
             print("Вы делите на ноль")
